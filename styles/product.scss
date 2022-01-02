@@ -1,0 +1,131 @@
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @media (min-width: 40rem) {
+    flex-direction: row;
+    width: 100%;
+  }
+}
+
+.product__image {
+  display: flex;
+  margin: 1rem;
+
+  @media (min-width: 40rem) {
+    width: 50%;
+    height: 100%;
+    align-items: center;
+    justify-content: end;
+  }
+}
+
+.image__wrapper {
+  max-width: 40rem;
+  font-size: 0;
+}
+
+.product__details {
+  display: flex;
+  margin: 1rem;
+
+  @media (min-width: 40rem) {
+    width: 50%;
+    height: 100%;
+    align-items: center;
+    justify-content: start;
+  }
+}
+
+.details__wrapper {
+  max-width: 40rem;
+}
+
+.product__link {
+  display: inline-flex;
+  margin-bottom: 4rem;
+
+  font-size: 1rem;
+  color: #222;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.product__category {
+  margin-bottom: 1rem;
+
+  font-size: 1rem;
+  color: #222;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.product__title {
+  margin-bottom: 1rem;
+
+  font-size: 2rem;
+  color: #222;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 600;
+}
+
+.product__description {
+  margin-bottom: 1rem;
+
+  font-size: 1rem;
+  color: #222;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 300;
+}
+
+.product__tags {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.product__tag {
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+
+  font-size: 1rem;
+  color: #222;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.product__quantity-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.product__quantity {
+  display: flex;
+  align-items: center;
+}
+
+.quantity__minus {
+}
+
+.quantity__amount {
+  font-size: 1rem;
+  color: #222;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0 1rem;
+}
+
+.quantity__plus {
+}
+
+.product__price {
+  font-size: 1.5rem;
+  color: #222;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 600;
+}
+
+.product__buttons {
+  display: flex;
+}

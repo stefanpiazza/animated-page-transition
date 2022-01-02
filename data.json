@@ -1,0 +1,104 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "image": {
+        "alt": "asset-1",
+        "src": "/assets/1.jpg",
+        "width": 1000,
+        "height": 1400
+      },
+      "category": "Abstract Shapes and Scenes",
+      "title": "Abstract Shape and Scene #1",
+      "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum laborum repudiandae facilis nulla rem veniam, consequuntur voluptates obcaecati unde dignissimos nesciunt delectus nostrum voluptatem tenetur consequatur ut, cumque expedita nisi.",
+      "tags": [
+        {
+          "id": 1,
+          "title": "Swirls"
+        },
+        {
+          "id": 2,
+          "title": "Circles"
+        },
+        {
+          "id": 3,
+          "title": "Rings"
+        }
+      ],
+      "price": "£45.00"
+    },
+    {
+      "id": 2,
+      "image": {
+        "alt": "asset-2",
+        "src": "/assets/2.jpg",
+        "width": 1000,
+        "height": 1400
+      },
+      "category": "Abstract Shapes and Scenes",
+      "title": "Abstract Shape and Scene #2",
+      "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum laborum repudiandae facilis nulla rem veniam, consequuntur voluptates obcaecati unde dignissimos nesciunt delectus nostrum voluptatem tenetur consequatur ut, cumque expedita nisi.",
+      "tags": [
+        {
+          "id": 1,
+          "title": "Vase"
+        },
+        {
+          "id": 2,
+          "title": "Wheat"
+        },
+        {
+          "id": 3,
+          "title": "Seeds"
+        }
+      ],
+      "price": "£45.00"
+    },
+    {
+      "id": 3,
+      "image": {
+        "alt": "asset-3",
+        "src": "/assets/3.jpg",
+        "width": 1000,
+        "height": 1400
+      },
+      "category": "Abstract Shapes and Scenes",
+      "title": "Abstract Shape and Scene #3",
+      "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum laborum repudiandae facilis nulla rem veniam, consequuntur voluptates obcaecati unde dignissimos nesciunt delectus nostrum voluptatem tenetur consequatur ut, cumque expedita nisi.",
+      "tags": [
+        {
+          "id": 1,
+          "title": "Leaves"
+        },
+        {
+          "id": 2,
+          "title": "Circles"
+        }
+      ],
+      "price": "£30.00"
+    },
+    {
+      "id": 4,
+      "image": {
+        "alt": "asset-4",
+        "src": "/assets/4.jpg",
+        "width": 1000,
+        "height": 1400
+      },
+      "category": "Abstract Shapes and Scenes",
+      "title": "Abstract Shape and Scene #4",
+      "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum laborum repudiandae facilis nulla rem veniam, consequuntur voluptates obcaecati unde dignissimos nesciunt delectus nostrum voluptatem tenetur consequatur ut, cumque expedita nisi.",
+      "tags": [
+        {
+          "id": 1,
+          "title": "Vase"
+        },
+        {
+          "id": 2,
+          "title": "Flower"
+        }
+      ],
+      "price": "£30.00"
+    }
+  ]
+}
