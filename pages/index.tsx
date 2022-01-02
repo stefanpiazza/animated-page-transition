@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { getPlaiceholder } from "plaiceholder";
+// import { getPlaiceholder } from "plaiceholder";
 import { fadeInUp, fadeOut, stagger } from "../shared/animations";
 import { Product, Products } from "../shared/types";
 
@@ -25,8 +25,11 @@ const Home: NextPage<HomeProps> = ({ products }) => {
               {products.map((product) => {
                 const {
                   id,
-                  image: { src, alt, width, height, blurDataURL },
+                  image: { src, alt, width, height },
+                  // image: { src, alt, width, height, blurDataURL },
                 } = product;
+
+                console.log({ product });
 
                 return (
                   <motion.li
@@ -44,8 +47,8 @@ const Home: NextPage<HomeProps> = ({ products }) => {
                         alt={alt}
                         width={width}
                         height={height}
-                        blurDataURL={blurDataURL}
-                        placeholder="blur"
+                        // blurDataURL={blurDataURL}
+                        // placeholder="blur"
                       />
                       <Link href={`/product/${id}`} passHref>
                         <a className="list-item__link"></a>
@@ -67,15 +70,15 @@ export async function getServerSideProps() {
 
   const { products }: { products: Products } = data;
 
-  await Promise.all(
-    products.map(async (product: Product) => {
-      const { base64 } = await getPlaiceholder(product.image.src);
+  // await Promise.all(
+  //   products.map(async (product: Product) => {
+  //     const { base64 } = await getPlaiceholder(product.image.src);
 
-      product.image.blurDataURL = base64;
+  //     product.image.blurDataURL = base64;
 
-      return product;
-    })
-  );
+  //     return product;
+  //   })
+  // );
 
   return {
     props: {

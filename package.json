@@ -8,7 +8,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@plaiceholder/next": "^2.2.0",
     "framer-motion": "^5.5.5",
     "next": "12.0.7",
     "plaiceholder": "^2.2.0",

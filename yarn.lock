@@ -246,11 +246,6 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@plaiceholder/next@^2.2.0":
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/@plaiceholder/next/-/next-2.2.0.tgz#e75338ec861cba62713c8876714bd602f0bf7c47"
-  integrity sha512-RRn6nivDVK5ibtcaYX50TClIS6gXVTClRp1PWaZfXvvdowTR+MRKjFSA2K4FAAk0O65pxPYLz1O2VaHiGN/6DA==
-
 "@rushstack/eslint-patch@^1.0.8":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@rushstack/eslint-patch/-/eslint-patch-1.1.0.tgz#7f698254aadf921e48dda8c0a6b304026b8a9323"
