@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import type { GetServerSidePropsContext, NextPage } from "next";
+import type { GetStaticPropsContext, NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { getPlaiceholder } from "plaiceholder";
@@ -119,7 +119,7 @@ const Product: NextPage<ProductProps> = ({ product }) => {
   );
 };
 
-export async function getServerSideProps(ctx: GetServerSidePropsContext) {
+export async function getStaticProps(ctx: GetStaticPropsContext) {
   const { params } = ctx;
   const { id } = params || {};
 
@@ -143,6 +143,18 @@ export async function getServerSideProps(ctx: GetServerSidePropsContext) {
     props: {
       product,
     },
+  };
+}
+
+export async function getStaticPaths() {
+  return {
+    paths: [
+      { params: { id: "1" } },
+      { params: { id: "2" } },
+      { params: { id: "3" } },
+      { params: { id: "4" } },
+    ],
+    fallback: false,
   };
 }
 
