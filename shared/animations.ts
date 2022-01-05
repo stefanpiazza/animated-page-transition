@@ -1,14 +1,7 @@
 const easing = [0.6, -0.05, 0.01, 0.99];
 
 export const fadeOut = {
-  initial: {
-    opacity: 1,
-    transition: {
-      duration: 0.6,
-      ease: easing,
-    },
-  },
-  exit: {
+  hide: {
     opacity: 0,
     transition: {
       duration: 0.6,
@@ -18,7 +11,7 @@ export const fadeOut = {
 };
 
 export const fadeInUp = {
-  initial: {
+  hide: {
     y: 60,
     opacity: 0,
     transition: {
@@ -26,7 +19,7 @@ export const fadeInUp = {
       ease: easing,
     },
   },
-  animate: {
+  show: {
     y: 0,
     opacity: 1,
     transition: {
@@ -37,7 +30,7 @@ export const fadeInUp = {
 };
 
 export const fadeInRight = {
-  initial: {
+  hide: {
     x: -60,
     opacity: 0,
     transition: {
@@ -45,7 +38,7 @@ export const fadeInRight = {
       ease: easing,
     },
   },
-  animate: {
+  show: {
     x: 0,
     opacity: 1,
     transition: {
@@ -56,9 +49,20 @@ export const fadeInRight = {
 };
 
 export const stagger = {
-  animate: {
+  show: {
     transition: {
       staggerChildren: 0.05,
     },
   },
+};
+
+export const fadeInViewProps = {
+  initial: "hide",
+  whileInView: "show",
+  viewport: { once: true, amount: 0.25 },
+};
+
+export const fadeInProps = {
+  initial: "hide",
+  animate: "show",
 };
