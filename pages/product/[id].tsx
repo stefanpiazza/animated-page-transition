@@ -1,14 +1,15 @@
-import { motion } from "framer-motion";
+import { motion, useIsPresent } from "framer-motion";
 import type { GetStaticPropsContext, NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { getPlaiceholder } from "plaiceholder";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   fadeOut,
   fadeInRight,
   stagger,
   fadeInUp,
+  fadeInProps,
 } from "../../shared/animations";
 import { Product, Products } from "../../shared/types";
 
@@ -32,17 +33,24 @@ const Product: NextPage<ProductProps> = ({ product }) => {
   const increaseProductQuantity = () =>
     setProductQuantity((i) => Math.min((i += 1), 10));
 
+  const isPresent = useIsPresent();
+
+  useEffect(() => {
+    if (isPresent) {
+      window.scrollTo(0, 0);
+    }
+  }, [isPresent]);
+
   return (
-    <motion.div
-      initial="initial"
-      animate="animate"
-      exit="exit"
-      variants={fadeOut}
-    >
+    <motion.div exit="hide" variants={fadeOut}>
       <div className="container">
         <div className="product">
           <div className="product__image">
-            <motion.div variants={fadeInRight} className="image__wrapper">
+            <motion.div
+              {...fadeInProps}
+              className="image__wrapper"
+              variants={fadeInRight}
+            >
               <Image
                 src={src}
                 alt={alt}
@@ -55,18 +63,34 @@ const Product: NextPage<ProductProps> = ({ product }) => {
           </div>
           <div className="product__details">
             <motion.div variants={stagger} className="details__wrapper">
-              <Link href="/" passHref>
-                <motion.a variants={fadeInUp} className="product__link">
+              <Link href="/" passHref scroll={false}>
+                <motion.a
+                  {...fadeInProps}
+                  className="product__link"
+                  variants={fadeInUp}
+                >
                   Back to products
                 </motion.a>
               </Link>
-              <motion.div variants={fadeInUp} className="product__category">
+              <motion.div
+                {...fadeInProps}
+                className="product__category"
+                variants={fadeInUp}
+              >
                 {category}
               </motion.div>
-              <motion.h1 variants={fadeInUp} className="product__title">
+              <motion.h1
+                {...fadeInProps}
+                className="product__title"
+                variants={fadeInUp}
+              >
                 {title}
               </motion.h1>
-              <motion.p variants={fadeInUp} className="product__description">
+              <motion.p
+                {...fadeInProps}
+                className="product__description"
+                variants={fadeInUp}
+              >
                 {description}
               </motion.p>
               {tags && tags.length && (
@@ -76,9 +100,10 @@ const Product: NextPage<ProductProps> = ({ product }) => {
 
                     return (
                       <motion.li
-                        variants={fadeInUp}
+                        {...fadeInProps}
                         className="product__tag"
                         key={`tag-${id}`}
+                        variants={fadeInUp}
                       >
                         {title}
                       </motion.li>
@@ -87,8 +112,9 @@ const Product: NextPage<ProductProps> = ({ product }) => {
                 </motion.ul>
               )}
               <motion.div
-                variants={fadeInUp}
+                {...fadeInProps}
                 className="product__quantity-price"
+                variants={fadeInUp}
               >
                 <div className="product__quantity">
                   <button
@@ -107,7 +133,11 @@ const Product: NextPage<ProductProps> = ({ product }) => {
                 </div>
                 <p className="product__price">{price}</p>
               </motion.div>
-              <motion.div variants={fadeInUp} className="product__buttons">
+              <motion.div
+                {...fadeInProps}
+                className="product__buttons"
+                variants={fadeInUp}
+              >
                 <button className="button button--primary">Add to cart</button>
                 <button className="button button--secondary">Subscribe</button>
               </motion.div>

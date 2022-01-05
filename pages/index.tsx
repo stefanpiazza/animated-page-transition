@@ -1,9 +1,15 @@
-import { motion } from "framer-motion";
+import { motion, useIsPresent } from "framer-motion";
 import { NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { getPlaiceholder } from "plaiceholder";
-import { fadeInUp, fadeOut, stagger } from "../shared/animations";
+import { useEffect } from "react";
+import {
+  fadeInUp,
+  fadeInViewProps,
+  fadeOut,
+  stagger,
+} from "../shared/animations";
 import { Product, Products } from "../shared/types";
 
 type HomeProps = {
@@ -11,13 +17,16 @@ type HomeProps = {
 };
 
 const Home: NextPage<HomeProps> = ({ products }) => {
+  const isPresent = useIsPresent();
+
+  useEffect(() => {
+    if (isPresent) {
+      window.scrollTo(0, 0);
+    }
+  }, [isPresent]);
+
   return (
-    <motion.div
-      initial="initial"
-      animate="animate"
-      exit="exit"
-      variants={fadeOut}
-    >
+    <motion.div exit="hide" variants={fadeOut}>
       <div className="container">
         <div className="products">
           {products && products.length && (
@@ -30,6 +39,7 @@ const Home: NextPage<HomeProps> = ({ products }) => {
 
                 return (
                   <motion.li
+                    {...fadeInViewProps}
                     className="products__list-item"
                     key={`product-${id}`}
                     variants={fadeInUp}
@@ -47,7 +57,7 @@ const Home: NextPage<HomeProps> = ({ products }) => {
                         blurDataURL={blurDataURL}
                         placeholder="blur"
                       />
-                      <Link href={`/product/${id}`} passHref>
+                      <Link href={`/product/${id}`} passHref scroll={false}>
                         <a className="list-item__link"></a>
                       </Link>
                     </motion.div>
