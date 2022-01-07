@@ -62,45 +62,36 @@ const Product: NextPage<ProductProps> = ({ product }) => {
             </motion.div>
           </div>
           <div className="product__details">
-            <motion.div variants={stagger} className="details__wrapper">
+            <motion.div
+              {...fadeInProps}
+              variants={stagger}
+              className="details__wrapper"
+            >
               <Link href="/" passHref scroll={false}>
-                <motion.a
-                  {...fadeInProps}
-                  className="product__link"
-                  variants={fadeInUp}
-                >
+                <motion.a className="product__link" variants={fadeInUp}>
                   Back to products
                 </motion.a>
               </Link>
-              <motion.div
-                {...fadeInProps}
-                className="product__category"
-                variants={fadeInUp}
-              >
+              <motion.div className="product__category" variants={fadeInUp}>
                 {category}
               </motion.div>
-              <motion.h1
-                {...fadeInProps}
-                className="product__title"
-                variants={fadeInUp}
-              >
+              <motion.h1 className="product__title" variants={fadeInUp}>
                 {title}
               </motion.h1>
-              <motion.p
-                {...fadeInProps}
-                className="product__description"
-                variants={fadeInUp}
-              >
+              <motion.p className="product__description" variants={fadeInUp}>
                 {description}
               </motion.p>
               {tags && tags.length && (
-                <motion.ul variants={stagger} className="product__tags">
+                <motion.ul
+                  {...fadeInProps}
+                  variants={stagger}
+                  className="product__tags"
+                >
                   {tags.map((tag) => {
                     const { id, title } = tag;
 
                     return (
                       <motion.li
-                        {...fadeInProps}
                         className="product__tag"
                         key={`tag-${id}`}
                         variants={fadeInUp}
@@ -112,7 +103,6 @@ const Product: NextPage<ProductProps> = ({ product }) => {
                 </motion.ul>
               )}
               <motion.div
-                {...fadeInProps}
                 className="product__quantity-price"
                 variants={fadeInUp}
               >
@@ -133,11 +123,7 @@ const Product: NextPage<ProductProps> = ({ product }) => {
                 </div>
                 <p className="product__price">{price}</p>
               </motion.div>
-              <motion.div
-                {...fadeInProps}
-                className="product__buttons"
-                variants={fadeInUp}
-              >
+              <motion.div className="product__buttons" variants={fadeInUp}>
                 <button className="button button--primary">Add to cart</button>
                 <button className="button button--secondary">Subscribe</button>
               </motion.div>

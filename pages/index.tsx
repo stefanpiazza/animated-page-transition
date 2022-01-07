@@ -4,12 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { getPlaiceholder } from "plaiceholder";
 import { useEffect } from "react";
-import {
-  fadeInUp,
-  fadeInViewProps,
-  fadeOut,
-  stagger,
-} from "../shared/animations";
+import { fadeInProps, fadeInUp, fadeOut, stagger } from "../shared/animations";
 import { Product, Products } from "../shared/types";
 
 type HomeProps = {
@@ -30,7 +25,11 @@ const Home: NextPage<HomeProps> = ({ products }) => {
       <div className="container">
         <div className="products">
           {products && products.length && (
-            <motion.ul variants={stagger} className="products__list">
+            <motion.ul
+              {...fadeInProps}
+              variants={stagger}
+              className="products__list"
+            >
               {products.map((product) => {
                 const {
                   id,
@@ -39,7 +38,6 @@ const Home: NextPage<HomeProps> = ({ products }) => {
 
                 return (
                   <motion.li
-                    {...fadeInViewProps}
                     className="products__list-item"
                     key={`product-${id}`}
                     variants={fadeInUp}
